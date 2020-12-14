@@ -4,13 +4,17 @@
 		<title>Site-Status</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="estilo.css">
-
-		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+		<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+		<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script> 
 		<script src="https://code.highcharts.com/modules/series-label.js"></script>
 		<script src="https://code.highcharts.com/modules/exporting.js"></script>
 		<script src="https://code.highcharts.com/modules/export-data.js"></script>
 		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-		<script src="container.js"></script>
+
+		
+		
 	</head>
 	<body>
 		
@@ -27,27 +31,20 @@
 
 			<div id="graphWhatsapp">
 				<p>Grafico Whatsapp</p>
-				<div>
-					
-					
-
-					<figure class="highcharts-figure">
-					    <div id="container"></div>
-					    <p class="highcharts-description">
-					        Basic line chart showing trends in a dataset. This chart includes the
-					        <code>series-label</code> module, which adds a label to each line for
-					        enhanced readability.
-					    </p>
-					</figure>
+					<canvas class="highcharts-figure">
+					    <div id="graficolinha"></div>
+					    <p class="highcharts-description"></p>
+					</canvas>
+						</div>
+			<div id="duplo">			
+				<div id="rosca">
+					Grafico Rosca
+						<div id="chartdiv"></div>
 				</div>
-			</div>
 
-			<div id="rosca">
-				Grafico Rosca
-			</div>
-
-			<div id="servicos">
-				Serviços
+				<div id="servicos">
+					Serviços
+				</div>
 			</div>
 
 			<div class="clear"></div>
