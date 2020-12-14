@@ -3,10 +3,120 @@
 	<head>
 		<title>Site-Status</title>
 		<meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="estilo.css">
+		<link rel="stylesheet" type="text/css" href="estilo.css">
 
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/series-label.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/export-data.js"></script>
+		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+		<script src="container.js"></script>
 	</head>
 	<body>
+		
+			<div id="cabecalho">
+				<div id="textcabecalho">
+					<p id="teste">STATUS ALERTRACK</p>
+				</div> 
+			</div>
+
+			<div id="status">
+				<h3>Todo o serviço operacional</h3>
+				<p>Último incidente 5 dias atras</p>
+			</div>
+
+			<div id="graphWhatsapp">
+				<p>Grafico Whatsapp</p>
+				<div>
+					
+					
+
+					<figure class="highcharts-figure">
+					    <div id="container"></div>
+					    <p class="highcharts-description">
+					        Basic line chart showing trends in a dataset. This chart includes the
+					        <code>series-label</code> module, which adds a label to each line for
+					        enhanced readability.
+					    </p>
+					</figure>
+				</div>
+			</div>
+
+			<div id="rosca">
+				Grafico Rosca
+			</div>
+
+			<div id="servicos">
+				Serviços
+			</div>
+
+			<div class="clear"></div>
+
+			<div id="barra">
+				Tempo de Atividade dos Serviços
+			</div>
+
+			<div id="incidentes">
+				<h3>Ultimos Incidentes</h3>
+				<div>
+					<h4>02 de agosto de 2020</h4>
+						<div>
+							<p class="titleinc">Soluçao</p>
+								<div class="incidente">
+									Gerador atenderá como backup em casos semelhantes, garantindo assim, a continuidade por períodos maiores que 23 horas.
+
+									4 horas atrás
+								</div>
+							<p class="titleinc">Problema sendo monitorado</p>
+								<div class="incidente">
+									Aquisição de nova unidade de GERADOR DE ENERGIA A DIESEL.
+
+									8 horas atrás
+								</div>
+							<p class="titleinc">Incidente Energético</p>		
+								<div class="incidente">
+									Devido a incidentes naturais houvera a presença da falta de energia na região por tempo não previsto, fazendo com que hajam paradas do fornecimento de energia de forma segura, o que faz com que a cada período de 23horas seja obrigatório o reinício das atividades dos serviços prestados. 
+									Isto ocorre diante ao fato de que o gerador disponibilizado pela ALERTRACK possui coeficiência de até 20 Horas de disponibilidade do fornecimento contínuo, somados à disponibilização por parte de armazenamento de energia, menos o tempo necessário para o desligamento dos servidores
+
+									10 horas atrás
+								</div>
+							<p class="italico">Nenhum incidente do WhatsApp neste dia.</p>
+							<hr>
+						</div>
+				</div>
+
+				<div>
+					<h4>31 de julho de 2020</h4>
+						<div>
+							<p class="titleinc">Solução</p>
+								<div class="incidente">
+									WhatsApp voltou a operar normalmente.
+
+									4 horas atrás
+								</div>
+							<p class="titleinc">Problema sendo monitorado</p>
+								<div class="incidente">
+									O serviço está sendo restaurado para alguns países.
+
+									8 horas atrás
+								</div>
+							<p class="titleinc">WhatsApp Interrumpido</p>
+								<div class="incidente">
+									O WhatsApp está passando por uma interrupção geral em todo o mundo. Não é possível usar o serviço porque o servidor está fora do ar.
+
+									10 horas atrás
+								</div>
+								<hr>
+						</div>
+				</div>
+				<div>
+					<h4>30 de junho de 2020</h4>
+						<div>
+							<p class="italico">Sem incidentes para este dia</p>
+						</div>
+				</div>
+			</div>
+		
 
 	</body>
 </html>
