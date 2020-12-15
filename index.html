@@ -1,126 +1,141 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Site-Status</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="estilo.css">
-		
-		<!-- Import Bootstrap -->
-    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-         <!-- Imports highcharts e jsChart -->
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
-        integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
-        crossorigin="anonymous"></script>
-		<script src="https://code.highcharts.com/highcharts.js"></script> 
-		<script src="https://code.highcharts.com/modules/exporting.js"></script>
-		<script src="https://code.highcharts.com/modules/export-data.js"></script>
-		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<head>
+	<title>Site-Status</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	
+	<!-- Import Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+	crossorigin="anonymous"></script>
+	<!-- Imports highcharts e jsChart -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+	integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+	crossorigin="anonymous"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script> 
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-		
-		
-	</head>
-	<body>
-		
-			<div id="cabecalho">
-				<div id="textcabecalho">
-					<p id="teste">STATUS ALERTRACK</p>
-				</div> 
-			</div>
+	
+</head>
+<body>
+	
+	<div class="container px-5">
+        <div class="row text-grey p-3">STATUS ALERTRACK</div>
+        <div class="row">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-1 text-center m-auto">
+                            <svg class="svg-checkgreen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                width="24" height="24">
+                                <path fill-rule="evenodd"
+                                    d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12zm16.28-2.72a.75.75 0 00-1.06-1.06l-5.97 5.97-2.47-2.47a.75.75 0 00-1.06 1.06l3 3a.75.75 0 001.06 0l6.5-6.5z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="col-md-11">
+                            <div>
+                                <p class="h5" style="font-weight: bold;">Todo o serviço operacional</p>
+                            </div>
+                            <div>
+                                <small class="text-muted">Último incidente há 5 dias atrás</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-			<div id="status">
-				<h3>Todo o serviço operacional</h3>
-				<p>Último incidente 5 dias atras</p>
-			</div>
+	<div id="graphWhatsapp">
+		<p>Grafico Whatsapp</p>
+		<canvas class="highcharts-figure">
+			<div id="graficolinha"></div>
+			<p class="highcharts-description"></p>
+		</canvas>
+	</div>
+	<div id="duplo">			
+		<div id="rosca">
+			Grafico Rosca
+			<div id="chartdiv"></div>
+		</div>
 
-			<div id="graphWhatsapp">
-				<p>Grafico Whatsapp</p>
-					<canvas class="highcharts-figure">
-					    <div id="graficolinha"></div>
-					    <p class="highcharts-description"></p>
-					</canvas>
-						</div>
-			<div id="duplo">			
-				<div id="rosca">
-					Grafico Rosca
-						<div id="chartdiv"></div>
+		<div id="servicos">
+			Serviços
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
+	<div id="barra">
+		Tempo de Atividade dos Serviços
+	</div>
+
+	<div id="incidentes">
+		<h3>Ultimos Incidentes</h3>
+		<div>
+			<h4>02 de agosto de 2020</h4>
+			<div>
+				<p class="titleinc">Soluçao</p>
+				<div class="incidente">
+					Gerador atenderá como backup em casos semelhantes, garantindo assim, a continuidade por períodos maiores que 23 horas.
+
+					4 horas atrás
 				</div>
+				<p class="titleinc">Problema sendo monitorado</p>
+				<div class="incidente">
+					Aquisição de nova unidade de GERADOR DE ENERGIA A DIESEL.
 
-				<div id="servicos">
-					Serviços
+					8 horas atrás
 				</div>
+				<p class="titleinc">Incidente Energético</p>		
+				<div class="incidente">
+					Devido a incidentes naturais houvera a presença da falta de energia na região por tempo não previsto, fazendo com que hajam paradas do fornecimento de energia de forma segura, o que faz com que a cada período de 23horas seja obrigatório o reinício das atividades dos serviços prestados. 
+					Isto ocorre diante ao fato de que o gerador disponibilizado pela ALERTRACK possui coeficiência de até 20 Horas de disponibilidade do fornecimento contínuo, somados à disponibilização por parte de armazenamento de energia, menos o tempo necessário para o desligamento dos servidores
+
+					10 horas atrás
+				</div>
+				<p class="italico">Nenhum incidente do WhatsApp neste dia.</p>
+				<hr>
 			</div>
+		</div>
 
-			<div class="clear"></div>
+		<div>
+			<h4>31 de julho de 2020</h4>
+			<div>
+				<p class="titleinc">Solução</p>
+				<div class="incidente">
+					WhatsApp voltou a operar normalmente.
 
-			<div id="barra">
-				Tempo de Atividade dos Serviços
+					4 horas atrás
+				</div>
+				<p class="titleinc">Problema sendo monitorado</p>
+				<div class="incidente">
+					O serviço está sendo restaurado para alguns países.
+
+					8 horas atrás
+				</div>
+				<p class="titleinc">WhatsApp Interrumpido</p>
+				<div class="incidente">
+					O WhatsApp está passando por uma interrupção geral em todo o mundo. Não é possível usar o serviço porque o servidor está fora do ar.
+
+					10 horas atrás
+				</div>
+				<hr>
 			</div>
-
-			<div id="incidentes">
-				<h3>Ultimos Incidentes</h3>
-				<div>
-					<h4>02 de agosto de 2020</h4>
-						<div>
-							<p class="titleinc">Soluçao</p>
-								<div class="incidente">
-									Gerador atenderá como backup em casos semelhantes, garantindo assim, a continuidade por períodos maiores que 23 horas.
-
-									4 horas atrás
-								</div>
-							<p class="titleinc">Problema sendo monitorado</p>
-								<div class="incidente">
-									Aquisição de nova unidade de GERADOR DE ENERGIA A DIESEL.
-
-									8 horas atrás
-								</div>
-							<p class="titleinc">Incidente Energético</p>		
-								<div class="incidente">
-									Devido a incidentes naturais houvera a presença da falta de energia na região por tempo não previsto, fazendo com que hajam paradas do fornecimento de energia de forma segura, o que faz com que a cada período de 23horas seja obrigatório o reinício das atividades dos serviços prestados. 
-									Isto ocorre diante ao fato de que o gerador disponibilizado pela ALERTRACK possui coeficiência de até 20 Horas de disponibilidade do fornecimento contínuo, somados à disponibilização por parte de armazenamento de energia, menos o tempo necessário para o desligamento dos servidores
-
-									10 horas atrás
-								</div>
-							<p class="italico">Nenhum incidente do WhatsApp neste dia.</p>
-							<hr>
-						</div>
-				</div>
-
-				<div>
-					<h4>31 de julho de 2020</h4>
-						<div>
-							<p class="titleinc">Solução</p>
-								<div class="incidente">
-									WhatsApp voltou a operar normalmente.
-
-									4 horas atrás
-								</div>
-							<p class="titleinc">Problema sendo monitorado</p>
-								<div class="incidente">
-									O serviço está sendo restaurado para alguns países.
-
-									8 horas atrás
-								</div>
-							<p class="titleinc">WhatsApp Interrumpido</p>
-								<div class="incidente">
-									O WhatsApp está passando por uma interrupção geral em todo o mundo. Não é possível usar o serviço porque o servidor está fora do ar.
-
-									10 horas atrás
-								</div>
-								<hr>
-						</div>
-				</div>
-				<div>
-					<h4>30 de junho de 2020</h4>
-						<div>
-							<p class="italico">Sem incidentes para este dia</p>
-						</div>
-				</div>
+		</div>
+		<div>
+			<h4>30 de junho de 2020</h4>
+			<div>
+				<p class="italico">Sem incidentes para este dia</p>
 			</div>
-		
+		</div>
+	</div>
+	
 
-	</body>
+</body>
 </html>
