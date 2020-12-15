@@ -4,7 +4,7 @@
 	<title>Site-Status</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
-
+	
 	<!-- Import Bootstrap -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
 	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -23,6 +23,79 @@
 
 </head>
 <body>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+            const chart = Highcharts.chart('graph-wpp', {
+
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: ''
+                },
+                yAxis: {
+                    title: {
+                        text: 'Notificações'
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: false
+                    }
+                },
+                series: [{
+                    name: 'México',
+                    data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+                }, {
+                    name: 'Brasil',
+                    data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+                }]
+            });
+            data = {
+                datasets: [{
+                    data: [10, 20, 30],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }],
+                labels: [
+                    'Red',
+                    'Yellow',
+                    'Blue'
+                ]
+            };
+            var ctx = document.getElementById('graph-brazil');
+
+            var mydoughnutChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: data,
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Brasil',
+                        fontSize: 24
+                    }
+                }
+            });
+        });
+	</script>
 
 	<div class="container px-5">
 		<div class="row text-grey p-3">STATUS ALERTRACK</div>
@@ -123,71 +196,143 @@
             </div>
         </div>
 
-<div id="barra">
-	Tempo de Atividade dos Serviços
-</div>
+        <div class="row">
+            <div class="card shadow mb-5 bg-white rounded">
+                <div class="card-body">
+                    <div class="row">Tempo de Atividades dos Serviços</div>
+                    <small class="row">Implementar Gráficos
+                </div>
+            </div>
+        </div>
 
-<div id="incidentes">
-	<h3>Ultimos Incidentes</h3>
-	<div>
-		<h4>02 de agosto de 2020</h4>
-		<div>
-			<p class="titleinc">Soluçao</p>
-			<div class="incidente">
-				Gerador atenderá como backup em casos semelhantes, garantindo assim, a continuidade por períodos maiores que 23 horas.
+        <div class="row">
+            <div class="card shadow mb-5 bg-white rounded">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="page-header mb-5">
+                            <h4 id="timeline">02 de Agosto 2020</h4>
+                        </div>
+                        <ul class="timeline">
+                            <li class="timeline-inverted">
+                                <div class="timeline-badge success"><i class="glyphicon glyphicon-credit-card"></i>
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Solução</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Gerador atenderá como backup em casos semelhantes, garantindo assim, a
+                                            continuidade por períodos maiores que 23 horas.</p>
 
-				4 horas atrás
-			</div>
-			<p class="titleinc">Problema sendo monitorado</p>
-			<div class="incidente">
-				Aquisição de nova unidade de GERADOR DE ENERGIA A DIESEL.
+                                        <small>4 horas atrás</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-badge primary"><i class="glyphicon glyphicon-credit-card"></i>
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Problema sendo monitorado</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Aquisição de nova unidade de GERADOR DE ENERGIA A DIESEL.
+                                        </p>
+                                        <small>8 horas atrás</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i>
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Incidente Energético</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Devido a incidentes naturais houvera a presença da falta de energia na região
+                                            por tempo não previsto, fazendo com que hajam paradas do fornecimento de
+                                            energia de forma segura, o que faz com que a cada período de 23horas seja
+                                            obrigatório o reinício das atividades dos serviços prestados.
+                                            Isto ocorre diante ao fato de que o gerador disponibilizado pela ALERTRACK
+                                            possui coeficiência de até 20 Horas de disponibilidade do fornecimento
+                                            contínuo, somados à disponibilização por parte de armazenamento de energia,
+                                            menos o tempo necessário para o desligamento dos servidores
+                                        </p>
+                                        <small>10 horas atrás</small>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
 
-				8 horas atrás
-			</div>
-			<p class="titleinc">Incidente Energético</p>		
-			<div class="incidente">
-				Devido a incidentes naturais houvera a presença da falta de energia na região por tempo não previsto, fazendo com que hajam paradas do fornecimento de energia de forma segura, o que faz com que a cada período de 23horas seja obrigatório o reinício das atividades dos serviços prestados. 
-				Isto ocorre diante ao fato de que o gerador disponibilizado pela ALERTRACK possui coeficiência de até 20 Horas de disponibilidade do fornecimento contínuo, somados à disponibilização por parte de armazenamento de energia, menos o tempo necessário para o desligamento dos servidores
+                        <div class="row">
+                            <h6> Nenhum incidente do WhatsApp neste dia</h6>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="container">
+                        <div class="page-header mb-5">
+                            <h4 id="timeline">31 de Junho 2020</h4>
+                        </div>
+                        <ul class="timeline">
+                            <li class="timeline-inverted">
+                                <div class="timeline-badge success"><i class="glyphicon glyphicon-credit-card"></i>
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Solução</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>WhatsApp voltou a operar normalmente.</p>
 
-				10 horas atrás
-			</div>
-			<p class="italico">Nenhum incidente do WhatsApp neste dia.</p>
-			<hr>
-		</div>
-	</div>
+                                        <small>4 horas atrás</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-badge primary"><i class="glyphicon glyphicon-credit-card"></i>
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Problema sendo monitorado</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>O serviço está sendo restaurado para alguns países.
+                                        </p>
+                                        <small>8 horas atrás</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i>
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">WhatsApp Interrumpido</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>O WhatsApp está passando por uma interrupção geral em todo o mundo. Não é
+                                            possível usar o serviço porque o servidor está fora do ar.
+                                        </p>
+                                        <small>10 horas atrás</small>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	<div>
-		<h4>31 de julho de 2020</h4>
-		<div>
-			<p class="titleinc">Solução</p>
-			<div class="incidente">
-				WhatsApp voltou a operar normalmente.
-
-				4 horas atrás
-			</div>
-			<p class="titleinc">Problema sendo monitorado</p>
-			<div class="incidente">
-				O serviço está sendo restaurado para alguns países.
-
-				8 horas atrás
-			</div>
-			<p class="titleinc">WhatsApp Interrumpido</p>
-			<div class="incidente">
-				O WhatsApp está passando por uma interrupção geral em todo o mundo. Não é possível usar o serviço porque o servidor está fora do ar.
-
-				10 horas atrás
-			</div>
-			<hr>
-		</div>
-	</div>
-	<div>
-		<h4>30 de junho de 2020</h4>
-		<div>
-			<p class="italico">Sem incidentes para este dia</p>
-		</div>
-	</div>
-</div>
-
-
+        <div class="row">
+            <div class="card shadow mb-5 bg-white rounded">
+                <div class="card-body">
+                    <div class="row">30 de Junho de 2020</div>
+                    <small class="row">Sem incidentes para este dia
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </body>
 </html>
